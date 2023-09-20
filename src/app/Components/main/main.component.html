@@ -2,12 +2,31 @@
 
 <!-- Data binding -->
 <!-- interpolation  => {{}} -->
-<h1>{{trackName}}</h1>
-<h3>{{sayHello()}}</h3>
+<!-- <h1>{{trackName}}</h1>
+<h3>{{sayHello()}}</h3> -->
 
 
-<p>User Data</p>
+<!-- <p>User Data</p>
 <div>
   <h2>User Name: {{userName}}</h2>
   <h4>User ID: {{userID}}</h4>
-</div>
+</div> -->
+
+<!-- Day2 -->
+<p>Test Class Model</p>
+<h1>{{trackdata.trackName}}</h1>
+<h3>{{trackdata.trackNum}}</h3>
+<!-- <h4>{{trackdata.courses[1]}}</h4> -->
+
+<!-- for of -->
+<!-- for(let i of arrayName) -->
+<h4 *ngFor="let course of trackdata.courses">{{course}}</h4>
+
+
+<p>Test interface Model</p>
+<h1>{{trackinfo.trackName}}</h1>
+<h2>Hours : {{trackinfo.trackHours}}</h2>
+<img src="{{trackinfo.trackImage}}">
+<ul>
+  <li *ngFor="let item of trackinfo.courses">{{item}}</li>
+</ul>

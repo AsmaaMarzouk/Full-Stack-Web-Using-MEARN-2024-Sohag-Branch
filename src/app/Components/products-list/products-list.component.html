@@ -1,0 +1,32 @@
+<!-- Event binding -->
+<button class="btn btn-primary" (click)="toggleImage()">
+  Show/Hide Image
+</button>
+
+<!--  -->
+<div class="mb-3">
+  <label for="prdName">Filter By Name:</label>
+  <!-- <input type="text" id="userName" name="userName" class="form-control" [value]="userName"> -->
+  <!-- <input type="text" id="userName" name="userName" class="form-control" [(ngModel)]="userName"> -->
+  <input type="text" id="prdName" name="prdName" class="form-control" [(ngModel)]="listFilter">
+</div>
+
+<!-- <p>{{listFilter}}</p> -->
+<div class="row ">
+  <!-- property binding => class binding -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productList" [class.text-danger]="prd.price>20000" [class.test]="prd.price>20000"> -->
+
+  <!-- protery binding => style binding -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productList" [style.color]="(prd.price>20000)?'blue':'green'" [style.background-color]="(prd.price>20000)?'lightblue':'lightgreen'"> -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productList"> -->
+    <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered">
+
+    <!-- <img src="{{prd.PrdimgURL}}" class="img-fluid"> -->
+    <img [src]="prd.PrdimgURL" class="img-fluid" *ngIf="flagImage">
+    <h4>{{prd.name}}</h4>
+    <h4>{{prd.price}}</h4>
+    <button class="btn btn-danger" [disabled]="prd.quantity==0"><i
+        class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i>Add To Cart</button>
+
+  </div>
+</div>
