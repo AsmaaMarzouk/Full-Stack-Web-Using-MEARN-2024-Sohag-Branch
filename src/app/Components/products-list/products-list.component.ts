@@ -19,6 +19,11 @@ set listFilter(value:string) {
 
 
 }
+
+// Day3
+date1:Date=new Date();
+
+// #######################
 // 1,2,3
 // table => 1 , chairs => 2 , tv units =>3
 constructor(){

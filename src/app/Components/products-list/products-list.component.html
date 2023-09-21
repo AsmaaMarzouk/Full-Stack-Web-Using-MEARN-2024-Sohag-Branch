@@ -1,3 +1,6 @@
+<!-- Day3 -->
+<h2>{{date1|date:'longDate'}}</h2>
+<!-- ##################### -->
 <!-- Event binding -->
 <button class="btn btn-primary" (click)="toggleImage()">
   Show/Hide Image
@@ -18,15 +21,71 @@
 
   <!-- protery binding => style binding -->
   <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productList" [style.color]="(prd.price>20000)?'blue':'green'" [style.background-color]="(prd.price>20000)?'lightblue':'lightgreen'"> -->
+
+
+  <!-- Day3 -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered" [ngClass]="{'text-warning':prd.price>20000,'bg-danger':prd.price>20000}"> -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered" [ngStyle]="{'color':(prd.price<10000)?'blue':'red','background-color':(prd.price<10000)?'lightblue':'lightgrey'}"> -->
+
+
+  <!-- ########################## -->
   <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productList"> -->
-    <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered">
+  <!-- virtual containers -->
+  <!-- ng-container || ng-template -->
+  <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered" *ngIf="prd.quantity>0">error -->
+  <ng-container *ngFor="let prd of productsWithFiltered">
+    <!-- <div class="col-sm-4 mb-4" *ngIf="prd.quantity>0"> -->
+    <div class="col-sm-4 mb-4">
 
-    <!-- <img src="{{prd.PrdimgURL}}" class="img-fluid"> -->
-    <img [src]="prd.PrdimgURL" class="img-fluid" *ngIf="flagImage">
-    <h4>{{prd.name}}</h4>
-    <h4>{{prd.price}}</h4>
-    <button class="btn btn-danger" [disabled]="prd.quantity==0"><i
-        class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i>Add To Cart</button>
+      <!-- <img src="{{prd.PrdimgURL}}" class="img-fluid"> -->
+      <img [src]="prd.PrdimgURL" class="img-fluid" *ngIf="flagImage" ImgStyle="60px" property1="5px">
+      <h4>{{prd.name|uppercase}}</h4>
+      <!-- <h4 ImgStyle>{{prd.price}}</h4> -->
+      <!-- <h4>{{prd.price|currency:'EUR':'code'}}</h4> -->
+      <!-- <h4>{{prd.price|currency:'EUR':'code'}}</h4> -->
+      <!-- <h4>{{prd.price|currency:'USD'}}</h4> -->
+      <!-- <h4>{{prd.price|currency}}</h4> -->
 
-  </div>
+      <div>
+        <h4 class="text-decoration-line-through text-danger">{{prd.price|currency}}</h4>
+        <h4>{{prd.price|calcDiscount:50|currency}}</h4>
+
+      </div>
+      <!-- Day3 -->
+      <!-- switch(){case 1: case 2: } -->
+      <!-- <div [ngSwitch]="prd.categoryID">
+        <div *ngSwitchCase="1">Table</div>
+        <div *ngSwitchCase="2">Chairs</div>
+        <div *ngSwitchCase="3">TV Unit</div> -->
+      <!-- <div *ngSwitchDefault>Tv unit</div> -->
+
+      <!-- </div> -->
+
+      <div>
+        <ng-container [ngSwitch]="prd.categoryID">
+          <ng-container *ngSwitchCase="1">Table</ng-container>
+          <ng-container *ngSwitchCase="2">Chairs</ng-container>
+          <ng-container *ngSwitchCase="3">TV Unit</ng-container>
+          <!-- <div *ngSwitchDefault>Tv unit</div> -->
+
+        </ng-container>
+
+      </div>
+
+      <!-- <div>
+        <ng-container *ngIf="prd.quantity>0;else outReference">In Stock</ng-container> -->
+
+      <!-- template reference => #referenceName -->
+      <!-- <ng-template #outReference>Out Of Stock</ng-template>
+      </div> -->
+      <!-- ################ -->
+      <button class="btn btn-danger" [disabled]="prd.quantity==0"><i
+          class="fa-sharp fa-solid fa-cart-plus modifyIcon"></i>Add To Cart</button>
+
+      <!-- <p #para>Hello</p> -->
+      <!-- <input type="text" #input1>
+
+          <button (click)="func1(input1.value)">click</button> -->
+    </div>
+  </ng-container>
 </div>

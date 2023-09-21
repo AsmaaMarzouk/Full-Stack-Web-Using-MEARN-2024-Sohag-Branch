@@ -8,6 +8,8 @@ import { MainComponent } from './Components/main/main.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ProductsListComponent } from './Components/products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
+import { ImgStyleDirective } from './Directives/img-style.directive';
+import { CalcDiscountPipe } from './Pipes/calc-discount.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     MainComponent,
     FooterComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ImgStyleDirective,
+    CalcDiscountPipe
   ],
   imports: [
     BrowserModule,
