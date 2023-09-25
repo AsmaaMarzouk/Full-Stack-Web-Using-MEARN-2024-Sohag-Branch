@@ -1,0 +1,46 @@
+<p>Content inside parent</p>
+<div class="mb-3">
+  <label for="prdName">Filter By Name:</label>
+  <input type="text" id="prdName" name="prdName" class="form-control" [(ngModel)]="listFilter">
+</div>
+
+<!-- <caption>Cart</caption>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let newItem of cart">
+      <td scope="col">{{newItem.name}}</td>
+      <td scope="col">{{newItem.price}}</td>
+
+    </tr>
+  </tbody>
+</table> -->
+<hr>
+
+<p>Child component</p>
+<app-products-list [listFilterInChild]="listFilter" (newPrdEvent)="CartFunc($event)"></app-products-list>
+
+<hr>
+<caption>Cart</caption>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let newItem of cart">
+      <td scope="col">{{newItem.name}}</td>
+      <td scope="col">{{newItem.price}}</td>
+
+    </tr>
+  </tbody>
+</table>
