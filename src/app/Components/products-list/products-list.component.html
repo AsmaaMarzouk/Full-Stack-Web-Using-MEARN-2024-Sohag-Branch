@@ -35,7 +35,10 @@
   <!-- <div class="col-sm-4 mb-4" *ngFor="let prd of productsWithFiltered" *ngIf="prd.quantity>0">error -->
   <ng-container *ngFor="let prd of productsWithFiltered">
     <!-- <div class="col-sm-4 mb-4" *ngIf="prd.quantity>0"> -->
-    <div class="col-sm-4 mb-4" [routerLink]="['/ProductDetails',prd.id]">
+    <!-- <div class="col-sm-4 mb-4" [routerLink]="['/ProductDetails',prd.id]"> -->
+
+      <!-- Day5 -->
+      <div class="col-sm-4 mb-4" (click)="prdDetails(prd.id)">
 
       <!-- <img src="{{prd.PrdimgURL}}" class="img-fluid"> -->
       <img [src]="prd.PrdimgURL" class="img-fluid" *ngIf="flagImage" ImgStyle="60px" property1="5px">

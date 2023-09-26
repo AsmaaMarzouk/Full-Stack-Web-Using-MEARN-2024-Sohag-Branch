@@ -26,6 +26,11 @@ const routes: Routes = [
   },
   { path: 'AboutUs', component: AboutUsComponent, title: 'About Us Page' },
   {path:'ProductDetails/:prodID',component: ProductDetailsComponent, title: 'Product Details Page'},
+  {
+    path: 'Order',
+    loadChildren: () => import('src/app/Components/orders/orders.module').then(m => m.OrdersModule)
+  },
+
   { path: '**', component: NotFoundPageComponent, title: 'Not Found Page' }, //not found page //wildcard path
 ];
 
