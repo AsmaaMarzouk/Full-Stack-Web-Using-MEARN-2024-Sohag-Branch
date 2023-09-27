@@ -1,3 +1,23 @@
+<!-- Day6 -->
+<div class="col-md-5 mx-auto">
+  <div class="small fw-light">search with materail</div>
+  <div class="input-group">
+    <input class="form-control border-end-0 border rounded-pill" type="text"
+      id="example-search-input" #inputValue>
+    <span class="input-group-append">
+      <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button" (click)="searchwitMat(inputValue.value)">
+        <i class="fa fa-search"></i>
+      </button>
+    </span>
+  </div>
+</div>
+
+<ul>
+  <li *ngFor="let prd of productsAfterSearch">
+    {{prd.name}}
+  </li>
+</ul>
+<!-- ######################################### -->
 <div class="container">
 
   <div class="row mb-4">

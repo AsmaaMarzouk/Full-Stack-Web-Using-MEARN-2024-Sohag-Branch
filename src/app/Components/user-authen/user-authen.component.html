@@ -1,0 +1,4 @@
+<!-- <button class="btn btn-primary" (click)="loginFunc()" [hidden]="userLog">Login</button>
+<button class="btn btn-danger" (click)="logOutFunc()" [hidden]="!userLog">LogOut</button> -->
+<button class="btn btn-primary" (click)="loginFunc()" [disabled]="userLog">Login</button>
+<button class="btn btn-danger" (click)="logOutFunc()" [disabled]="!userLog">LogOut</button>

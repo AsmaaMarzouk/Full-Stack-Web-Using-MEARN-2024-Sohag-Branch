@@ -7,6 +7,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { NotFoundPageComponent } from './Components/not-found-page/not-found-page.component';
 import { GroupOfRoutesComponent } from './Components/group-of-routes/group-of-routes.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { UserAuthenComponent } from './Components/user-authen/user-authen.component';
 
 // first match wins
 
@@ -31,6 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('src/app/Components/orders/orders.module').then(m => m.OrdersModule)
   },
 
+  {path:"UserLogin",component:UserAuthenComponent,title: "User Login Page"},
+  {path:"UserLogOut",component:UserAuthenComponent,title: "User Logout Page"},
   { path: '**', component: NotFoundPageComponent, title: 'Not Found Page' }, //not found page //wildcard path
 ];
 
