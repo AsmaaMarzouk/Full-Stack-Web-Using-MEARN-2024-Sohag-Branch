@@ -1,5 +1,6 @@
 {
-  "products": [{
+  "products": [
+    {
       "id": 2,
       "name": "Solo Wooden Top Coffee Table",
       "price": 5000,
@@ -90,11 +91,52 @@
       "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit assumenda saepe temporibus necessitatibus delectus a animi aliquam dolorem, sint, reiciendis dolor explicabo perspiciatis maxime molestias blanditiis quidem. Dolorem, magni! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum unde soluta laboriosam! Quae provident qui culpa. Veritatis adipisci nulla, vero ipsam quam, delectus, et possimus numquam facilis accusantium consequatur voluptatibus."
     }
   ],
-  "category": [{
-    "id": 1,
-    "catName": "Table"
-  }, {
-    "id": 2,
-    "catName": "Chairs"
-  }]
+  "category": [
+    {
+      "id": 1,
+      "catName": "Table"
+    },
+    {
+      "id": 2,
+      "catName": "Chairs"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Ahmed",
+      "lastName": "Wael",
+      "email": "ahwael@gmail.com"
+    },
+    {
+      "firstName": "Yara",
+      "lastName": "Sayed",
+      "email": "asd@gmail.com",
+      "id": 99
+    },
+    {
+      "firstName": "Yara",
+      "lastName": "Sayed",
+      "email": "asd@gmail.com",
+      "id": 100
+    },
+    {
+      "firstName": "asd",
+      "lastName": "test",
+      "email": "asd@asd",
+      "id": 101
+    },
+    {
+      "firstName": "jjj",
+      "lastName": "eeee",
+      "email": "asmaaahmed@gmail.com",
+      "id": 102
+    },
+    {
+      "firstName": "sara",
+      "lastName": "ahmed",
+      "email": "asd@asd",
+      "id": 104
+    }
+  ]
 }

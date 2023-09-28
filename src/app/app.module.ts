@@ -7,7 +7,7 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { MainComponent } from './Components/main/main.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ProductsListComponent } from './Components/products-list/products-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImgStyleDirective } from './Directives/img-style.directive';
 import { CalcDiscountPipe } from './Pipes/calc-discount.pipe';
 import { ProductsParentComponent } from './Components/products-parent/products-parent.component';
@@ -17,6 +17,8 @@ import { GroupOfRoutesComponent } from './Components/group-of-routes/group-of-ro
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserAuthenComponent } from './Components/user-authen/user-authen.component';
+import { UserTemplateDrivenFormComponent } from './Components/Users/user-template-driven-form/user-template-driven-form.component';
+import { UserReactiveFormComponent } from './Components/Users/user-reactive-form/user-reactive-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +33,16 @@ import { UserAuthenComponent } from './Components/user-authen/user-authen.compon
     NotFoundPageComponent,
     GroupOfRoutesComponent,
     ProductDetailsComponent,
-    UserAuthenComponent
+    UserAuthenComponent,
+    UserTemplateDrivenFormComponent,
+    UserReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

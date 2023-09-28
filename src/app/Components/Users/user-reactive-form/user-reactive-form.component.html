@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header">
+    Sign Up with Reactive
+  </div>
+  <div class="card-body">
+    <!-- <form (ngSubmit)="addNewUser()"> -->
+    <form [formGroup]="userForm">
+      <div class="form-group row mb-2">
+        <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+        <div class="col-md-8">
+
+          <!-- <input type="text" class="form-control" id="firstName" placeholder="First Name (required)" name='firstName' formControlName="firstName" [ngClass]="{'is-invalid':(userForm.get('firstName')?.touched || userForm.get('firstName')?.dirty)&&userForm.get('firstName')?.invalid}"> -->
+          <input type="text" class="form-control" id="firstName" placeholder="First Name (required)" name='firstName' formControlName="firstName" [ngClass]="{'is-invalid':(firstName?.touched || firstName?.dirty)&&firstName?.invalid}">
+
+          <span class="invalid-feedback">
+
+            <span *ngIf="firstName?.errors?.['required']">Please Enter First Name</span>
+            <span *ngIf="firstName?.errors?.['minlength']">First Name Must Be at least 3 characters</span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+        <div class="col-md-8">
+          <input class="form-control" id="lastNameId" type="text" name="lastName" placeholder="Last Name (required)" formControlName="lastName" />
+
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="emailId">Email</label>
+        <div class="col-md-8">
+          <input class="form-control" id="emailId" type="email" placeholder="Email (required)" name="email"  formControlName="email"/>
+
+        </div>
+      </div>
+
+      <br>
+      <button type="submit" class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<h2>{{userForm.value|json}}</h2>
+<h4>{{firstName?.errors|json}}</h4>

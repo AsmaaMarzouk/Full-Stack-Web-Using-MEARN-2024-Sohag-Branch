@@ -8,6 +8,9 @@ import { NotFoundPageComponent } from './Components/not-found-page/not-found-pag
 import { GroupOfRoutesComponent } from './Components/group-of-routes/group-of-routes.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
 import { UserAuthenComponent } from './Components/user-authen/user-authen.component';
+import { UserTemplateDrivenFormComponent } from './Components/Users/user-template-driven-form/user-template-driven-form.component';
+import { UserReactiveFormComponent } from './Components/Users/user-reactive-form/user-reactive-form.component';
+import { userGuard } from './Guards/user.guard';
 
 // first match wins
 
@@ -24,6 +27,7 @@ const routes: Routes = [
     path: 'ProductsParent',
     component: ProductsParentComponent,
     title: 'Products Parent Page',
+    canActivate:[userGuard]
   },
   { path: 'AboutUs', component: AboutUsComponent, title: 'About Us Page' },
   {path:'ProductDetails/:prodID',component: ProductDetailsComponent, title: 'Product Details Page'},
@@ -34,6 +38,8 @@ const routes: Routes = [
 
   {path:"UserLogin",component:UserAuthenComponent,title: "User Login Page"},
   {path:"UserLogOut",component:UserAuthenComponent,title: "User Logout Page"},
+  {path:"UserTemplateForm",component:UserTemplateDrivenFormComponent,title: "User Template Form"},
+  {path:"UserReactiveForm",component:UserReactiveFormComponent,title: "User Reactive Form"},
   { path: '**', component: NotFoundPageComponent, title: 'Not Found Page' }, //not found page //wildcard path
 ];
 

@@ -1,0 +1,58 @@
+<!-- <button class="btn btn-success" (click)="addNewUser()">Add User</button> -->
+
+
+
+<div class="card mb-5">
+  <div class="card-header">
+    Sign Up with template
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="addNewUser()" #signUpForm="ngForm">
+      <div class="form-group row mb-2">
+        <label for="firstName" class="col-md-2 col-form-label">First Name</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" name="first" id="firstName" placeholder="First Name (required)"
+            required minlength="3" [(ngModel)]="user.firstName" #firstNameInput="ngModel" [ngClass]="{'is-invalid':(firstNameInput.touched || firstNameInput.dirty)&&firstNameInput.invalid}">
+
+            <span class="invalid-feedback">
+              <span *ngIf="firstNameInput.errors?.['required']">First Name is required</span>
+              <span *ngIf="firstNameInput.errors?.['minlength']">First Name must be at least 3 characters</span>
+            </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
+        <div class="col-md-8">
+          <input class="form-control" id="lastNameId" type="text" placeholder="Last Name (required)" required
+            pattern="[A-Za-z]{5,}" name="lastName" [(ngModel)]="user.lastName" #lastNameInput="ngModel" [ngClass]="{'is-invalid':(lastNameInput.touched || lastNameInput.dirty)&&lastNameInput.invalid}"/>
+            <span class="invalid-feedback">
+              <span *ngIf="lastNameInput.errors?.['required']">Last Name is required</span>
+              <span *ngIf="lastNameInput.errors?.['pattern']">Last Name must be at least 5 characters</span>
+            </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="emailId">Email</label>
+        <div class="col-md-8">
+          <input class="form-control" id="emailId" type="email" placeholder="Email (required)" required email
+            name="email" [(ngModel)]="user.email" #emailInput="ngModel" [ngClass]="{'is-invalid':(emailInput.touched || emailInput.dirty)&& !emailInput.valid}" />
+
+            <span class="invalid-feedback">
+              <span *ngIf="emailInput.errors?.['required']">Email is required</span>
+              <span *ngIf="emailInput.errors?.['email']">Email must be contain @</span>
+            </span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="signUpForm.invalid">Submit</button>
+
+    </form>
+  </div>
+</div>
+
+<!-- <h2>{{user|json}}</h2> -->
+
+<!-- <h3>{{firstNameInput.dirty|json}}</h3>
+<h3>{{firstNameInput.touched|json}}</h3> -->
+<!-- <h2>{{firstNameInput.errors|json}}</h2> -->
